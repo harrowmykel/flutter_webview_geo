@@ -550,7 +550,7 @@ packages:
     dependency: "direct main"
     description:
       path: webview_flutter_android
-      ref: "release/v1.0.2"
+      ref: "release/v1.0.3"
       resolved-ref: f22e3c96c313135d7f7560c17c96e93be74ac061
       url: "https://github.com/harrowmykel/flutter_webview_geo.git"
     source: git
@@ -559,7 +559,7 @@ packages:
     dependency: "direct main"
     description:
       path: webview_flutter_platform_interface
-      ref: "release/v1.0.2"
+      ref: "release/v1.0.3"
       resolved-ref: f22e3c96c313135d7f7560c17c96e93be74ac061
       url: "https://github.com/harrowmykel/flutter_webview_geo.git"
     source: git
@@ -568,7 +568,7 @@ packages:
     dependency: "direct main"
     description:
       path: webview_flutter_wkwebview
-      ref: "release/v1.0.2"
+      ref: "release/v1.0.3"
       resolved-ref: f22e3c96c313135d7f7560c17c96e93be74ac061
       url: "https://github.com/harrowmykel/flutter_webview_geo.git"
     source: git

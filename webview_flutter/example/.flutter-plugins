@@ -7,5 +7,5 @@ path_provider_foundation=/home/micheal/.pub-cache/hosted/pub.dev/path_provider_f
 path_provider_linux=/home/micheal/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.10/
 path_provider_windows=/home/micheal/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.5/
 webview_flutter=/home/micheal/flutter_apps/flutter_webview_geo/webview_flutter/
-webview_flutter_android=/home/micheal/.pub-cache/hosted/pub.dev/webview_flutter_android-3.6.0/
-webview_flutter_wkwebview=/home/micheal/.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.4.0/
+webview_flutter_android=/home/micheal/.pub-cache/git/flutter_webview_geo-604761529b6e242bd7e01626bc4a109390f66c25/webview_flutter_android/
+webview_flutter_wkwebview=/home/micheal/.pub-cache/git/flutter_webview_geo-604761529b6e242bd7e01626bc4a109390f66c25/webview_flutter_wkwebview/

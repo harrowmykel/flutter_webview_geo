@@ -423,19 +423,19 @@
     },
     {
       "name": "webview_flutter_android",
-      "rootUri": "file:///home/micheal/.pub-cache/hosted/pub.dev/webview_flutter_android-3.6.0",
+      "rootUri": "file:///home/micheal/.pub-cache/git/flutter_webview_geo-f22e3c96c313135d7f7560c17c96e93be74ac061/webview_flutter_android",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "webview_flutter_platform_interface",
-      "rootUri": "file:///home/micheal/.pub-cache/hosted/pub.dev/webview_flutter_platform_interface-2.3.0",
+      "rootUri": "file:///home/micheal/.pub-cache/git/flutter_webview_geo-f22e3c96c313135d7f7560c17c96e93be74ac061/webview_flutter_platform_interface",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "webview_flutter_wkwebview",
-      "rootUri": "file:///home/micheal/.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.4.0",
+      "rootUri": "file:///home/micheal/.pub-cache/git/flutter_webview_geo-f22e3c96c313135d7f7560c17c96e93be74ac061/webview_flutter_wkwebview",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -452,7 +452,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-04-25T15:32:23.591167Z",
+  "generated": "2023-04-25T15:48:40.733405Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }

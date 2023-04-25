@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -30,7 +30,7 @@ public class PermissionRequestTest {
   @Mock public BinaryMessenger mockBinaryMessenger;
 
   @Mock
-  public io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.PermissionRequestFlutterApi
+  public io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.PermissionRequestFlutterApi
       mockFlutterApi;
 
   InstanceManager instanceManager;

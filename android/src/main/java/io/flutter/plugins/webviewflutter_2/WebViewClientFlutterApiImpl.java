@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.webkit.WebResourceErrorCompat;
 import io.flutter.plugin.common.BinaryMessenger;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebViewClientFlutterApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.WebViewClientFlutterApi;
 import java.util.HashMap;
 import java.util.Objects;
 

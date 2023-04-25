@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
@@ -14,7 +14,7 @@ import static org.mockito.Mockito.when;
 import android.os.Build;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
-import io.flutter.plugins.webviewflutter.utils.TestUtils;
+import io.flutter.plugins.webviewflutter_2.utils.TestUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

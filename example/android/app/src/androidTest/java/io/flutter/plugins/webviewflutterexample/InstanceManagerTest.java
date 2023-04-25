@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutterexample;
+package io.flutter.plugins.webviewflutter_2example;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import io.flutter.plugins.webviewflutter.InstanceManager;
+import io.flutter.plugins.webviewflutter_2.InstanceManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

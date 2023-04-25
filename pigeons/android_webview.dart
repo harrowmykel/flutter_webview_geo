@@ -16,7 +16,7 @@ import 'package:pigeon/pigeon.dart';
     javaOut:
         'android/src/main/java/io/flutter/plugins/webviewflutter/GeneratedAndroidWebView.java',
     javaOptions: JavaOptions(
-      package: 'io.flutter.plugins.webviewflutter',
+      package: 'io.flutter.plugins.webviewflutter_2',
       className: 'GeneratedAndroidWebView',
       copyrightHeader: <String>[
         'Copyright 2013 The Flutter Authors. All rights reserved.',

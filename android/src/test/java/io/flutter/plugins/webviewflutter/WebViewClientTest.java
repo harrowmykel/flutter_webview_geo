@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -16,8 +16,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import androidx.annotation.NonNull;
-import io.flutter.plugins.webviewflutter.WebViewClientHostApiImpl.WebViewClientCompatImpl;
-import io.flutter.plugins.webviewflutter.WebViewClientHostApiImpl.WebViewClientCreator;
+import io.flutter.plugins.webviewflutter_2.WebViewClientHostApiImpl.WebViewClientCompatImpl;
+import io.flutter.plugins.webviewflutter_2.WebViewClientHostApiImpl.WebViewClientCreator;
 import java.util.HashMap;
 import org.junit.After;
 import org.junit.Before;

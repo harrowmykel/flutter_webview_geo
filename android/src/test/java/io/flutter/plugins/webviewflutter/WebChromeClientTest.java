@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -21,8 +21,8 @@ import android.webkit.WebView;
 import android.webkit.WebView.WebViewTransport;
 import android.webkit.WebViewClient;
 import androidx.annotation.NonNull;
-import io.flutter.plugins.webviewflutter.WebChromeClientHostApiImpl.WebChromeClientCreator;
-import io.flutter.plugins.webviewflutter.WebChromeClientHostApiImpl.WebChromeClientImpl;
+import io.flutter.plugins.webviewflutter_2.WebChromeClientHostApiImpl.WebChromeClientCreator;
+import io.flutter.plugins.webviewflutter_2.WebChromeClientHostApiImpl.WebChromeClientImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

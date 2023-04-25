@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -24,9 +24,9 @@ import android.webkit.WebViewClient;
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterView;
 import io.flutter.plugin.common.BinaryMessenger;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebViewFlutterApi;
-import io.flutter.plugins.webviewflutter.WebViewHostApiImpl.WebViewPlatformView;
-import io.flutter.plugins.webviewflutter.utils.TestUtils;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.WebViewFlutterApi;
+import io.flutter.plugins.webviewflutter_2.WebViewHostApiImpl.WebViewPlatformView;
+import io.flutter.plugins.webviewflutter_2.utils.TestUtils;
 import java.util.HashMap;
 import java.util.Objects;
 import org.junit.After;

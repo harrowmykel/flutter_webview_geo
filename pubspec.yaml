@@ -13,7 +13,7 @@ flutter:
     implements: webview_flutter
     platforms:
       android:
-        package: io.flutter.plugins.webviewflutter
+        package: io.flutter.plugins.webviewflutter_2
         pluginClass: WebViewFlutterPlugin
         dartPluginClass: AndroidWebViewPlatform
 

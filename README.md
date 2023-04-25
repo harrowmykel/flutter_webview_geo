@@ -49,7 +49,7 @@ The API can be accessed by importing the native class `WebViewFlutterAndroidExte
 Java:
 
 ```java
-import io.flutter.plugins.webviewflutter.WebViewFlutterAndroidExternalApi;
+import io.flutter.plugins.webviewflutter_2.WebViewFlutterAndroidExternalApi;
 ```
 
 ## Contributing

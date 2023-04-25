@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import android.os.Build;
 import android.webkit.PermissionRequest;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import io.flutter.plugin.common.BinaryMessenger;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.PermissionRequestHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.PermissionRequestHostApi;
 import java.util.List;
 import java.util.Objects;
 

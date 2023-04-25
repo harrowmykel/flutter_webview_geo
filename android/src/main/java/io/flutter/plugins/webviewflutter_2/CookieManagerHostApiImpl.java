@@ -2,12 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import android.os.Build;
 import android.webkit.CookieManager;
 import androidx.annotation.NonNull;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.CookieManagerHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.CookieManagerHostApi;
 
 class CookieManagerHostApiImpl implements CookieManagerHostApi {
   @Override

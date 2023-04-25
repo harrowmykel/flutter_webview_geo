@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import android.content.Context;
 import android.os.Build;
@@ -14,18 +14,18 @@ import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.platform.PlatformViewRegistry;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.CookieManagerHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.DownloadListenerHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.FlutterAssetManagerHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.InstanceManagerHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.JavaObjectHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.JavaScriptChannelHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.PermissionRequestHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebChromeClientHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebSettingsHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebStorageHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebViewClientHostApi;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebViewHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.CookieManagerHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.DownloadListenerHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.FlutterAssetManagerHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.InstanceManagerHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.JavaObjectHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.JavaScriptChannelHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.PermissionRequestHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.WebChromeClientHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.WebSettingsHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.WebStorageHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.WebViewClientHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.WebViewHostApi;
 
 /**
  * Java platform implementation of the webview_flutter plugin.

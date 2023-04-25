@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.fail;
@@ -21,7 +21,7 @@ public class RegistrarFlutterAssetManagerTest {
   @Mock AssetManager mockAssetManager;
   @Mock io.flutter.plugin.common.PluginRegistry.Registrar mockRegistrar;
 
-  io.flutter.plugins.webviewflutter.FlutterAssetManager.RegistrarFlutterAssetManager
+  io.flutter.plugins.webviewflutter_2.FlutterAssetManager.RegistrarFlutterAssetManager
       testRegistrarFlutterAssetManager;
 
   @Before
@@ -30,7 +30,7 @@ public class RegistrarFlutterAssetManagerTest {
     mockRegistrar = mock(io.flutter.plugin.common.PluginRegistry.Registrar.class);
 
     testRegistrarFlutterAssetManager =
-        new io.flutter.plugins.webviewflutter.FlutterAssetManager.RegistrarFlutterAssetManager(
+        new io.flutter.plugins.webviewflutter_2.FlutterAssetManager.RegistrarFlutterAssetManager(
             mockAssetManager, mockRegistrar);
   }
 

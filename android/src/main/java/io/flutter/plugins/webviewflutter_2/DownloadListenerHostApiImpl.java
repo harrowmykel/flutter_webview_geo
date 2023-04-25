@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.webviewflutter;
+package io.flutter.plugins.webviewflutter_2;
 
 import android.webkit.DownloadListener;
 import androidx.annotation.NonNull;
-import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.DownloadListenerHostApi;
+import io.flutter.plugins.webviewflutter_2.GeneratedAndroidWebView.DownloadListenerHostApi;
 
 /**
  * Host api implementation for {@link DownloadListener}.

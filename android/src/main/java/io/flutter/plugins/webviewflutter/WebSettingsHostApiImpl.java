@@ -34,7 +34,9 @@ public class WebSettingsHostApiImpl implements WebSettingsHostApi {
      */
     @NonNull
     public WebSettings createWebSettings(@NonNull WebView webView) {
-      return webView.getSettings();
+      WebSettings webSettings = webView.getSettings();
+      webSettings.getSettings().setGeolocationEnabled(true);
+      return webSettings;
     }
   }
 

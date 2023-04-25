@@ -204,6 +204,8 @@ public class WebViewHostApiImpl implements WebViewHostApi {
     displayListenerProxy.onPreWebViewInitialization(displayManager);
 
     final WebView webView = webViewProxy.createWebView(context, binaryMessenger, instanceManager);
+    webView.setVerticalScrollBarEnabled(false);
+    webView.setHorizontalScrollBarEnabled(false);
 
     displayListenerProxy.onPostWebViewInitialization(displayManager);
     instanceManager.addDartCreatedInstance(webView, instanceId);

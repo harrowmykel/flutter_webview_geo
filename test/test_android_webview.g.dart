@@ -11,7 +11,7 @@ import 'package:flutter/foundation.dart' show ReadBuffer, WriteBuffer;
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:webview_flutter_android/src/android_webview.g.dart';
+import 'package:webview_flutter_android_2/src/android_webview.g.dart';
 
 /// Host API for managing the native `InstanceManager`.
 abstract class TestInstanceManagerHostApi {

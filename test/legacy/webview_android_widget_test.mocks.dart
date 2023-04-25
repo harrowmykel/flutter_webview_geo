@@ -8,8 +8,8 @@ import 'dart:typed_data' as _i6;
 import 'dart:ui' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:webview_flutter_android/src/android_webview.dart' as _i2;
-import 'package:webview_flutter_android/src/legacy/webview_android_widget.dart'
+import 'package:webview_flutter_android_2/src/android_webview.dart' as _i2;
+import 'package:webview_flutter_android_2/src/legacy/webview_android_widget.dart'
     as _i7;
 import 'package:webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart'
     as _i4;
@@ -954,30 +954,36 @@ class MockWebViewProxy extends _i1.Mock implements _i7.WebViewProxy {
     void Function(
       _i2.WebView,
       String,
-    )? onPageStarted,
+    )?
+        onPageStarted,
     void Function(
       _i2.WebView,
       String,
-    )? onPageFinished,
+    )?
+        onPageFinished,
     void Function(
       _i2.WebView,
       _i2.WebResourceRequest,
       _i2.WebResourceError,
-    )? onReceivedRequestError,
+    )?
+        onReceivedRequestError,
     void Function(
       _i2.WebView,
       int,
       String,
       String,
-    )? onReceivedError,
+    )?
+        onReceivedError,
     void Function(
       _i2.WebView,
       _i2.WebResourceRequest,
-    )? requestLoading,
+    )?
+        requestLoading,
     void Function(
       _i2.WebView,
       String,
-    )? urlLoading,
+    )?
+        urlLoading,
   }) =>
       (super.noSuchMethod(
         Invocation.method(

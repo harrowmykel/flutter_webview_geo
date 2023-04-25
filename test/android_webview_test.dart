@@ -5,10 +5,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:webview_flutter_android/src/android_webview.dart';
-import 'package:webview_flutter_android/src/android_webview.g.dart';
-import 'package:webview_flutter_android/src/android_webview_api_impls.dart';
-import 'package:webview_flutter_android/src/instance_manager.dart';
+import 'package:webview_flutter_android_2/src/android_webview.dart';
+import 'package:webview_flutter_android_2/src/android_webview.g.dart';
+import 'package:webview_flutter_android_2/src/android_webview_api_impls.dart';
+import 'package:webview_flutter_android_2/src/instance_manager.dart';
 
 import 'android_webview_test.mocks.dart';
 import 'test_android_webview.g.dart';

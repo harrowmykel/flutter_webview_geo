@@ -5,9 +5,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:webview_flutter_android/src/android_webview.dart'
+import 'package:webview_flutter_android_2/src/android_webview.dart'
     as android_webview;
-import 'package:webview_flutter_android/webview_flutter_android.dart';
+import 'package:webview_flutter_android_2/webview_flutter_android_2.dart';
 import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
 
 import 'android_webview_cookie_manager_test.mocks.dart';

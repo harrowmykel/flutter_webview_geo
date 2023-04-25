@@ -8,8 +8,8 @@ import 'dart:typed_data' as _i7;
 import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:webview_flutter_android/src/android_webview.dart' as _i2;
-import 'package:webview_flutter_android/src/android_webview.g.dart' as _i3;
+import 'package:webview_flutter_android_2/src/android_webview.dart' as _i2;
+import 'package:webview_flutter_android_2/src/android_webview.g.dart' as _i3;
 
 import 'test_android_webview.g.dart' as _i6;
 

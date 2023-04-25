@@ -9,7 +9,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 // ignore: implementation_imports
-import 'package:webview_flutter_android/src/webview_flutter_android_legacy.dart';
+import 'package:webview_flutter_android_2/src/webview_flutter_android_legacy.dart';
 // ignore: implementation_imports
 import 'package:webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
 

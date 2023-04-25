@@ -11,13 +11,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:webview_flutter_android/src/android_proxy.dart';
-import 'package:webview_flutter_android/src/android_webview.dart'
+import 'package:webview_flutter_android_2/src/android_proxy.dart';
+import 'package:webview_flutter_android_2/src/android_webview.dart'
     as android_webview;
-import 'package:webview_flutter_android/src/android_webview_api_impls.dart';
-import 'package:webview_flutter_android/src/instance_manager.dart';
-import 'package:webview_flutter_android/src/platform_views_service_proxy.dart';
-import 'package:webview_flutter_android/webview_flutter_android.dart';
+import 'package:webview_flutter_android_2/src/android_webview_api_impls.dart';
+import 'package:webview_flutter_android_2/src/instance_manager.dart';
+import 'package:webview_flutter_android_2/src/platform_views_service_proxy.dart';
+import 'package:webview_flutter_android_2/webview_flutter_android_2.dart';
 import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
 
 import 'android_navigation_delegate_test.dart';
@@ -58,12 +58,15 @@ void main() {
       Future<List<String>> Function(
         android_webview.WebView webView,
         android_webview.FileChooserParams params,
-      )? onShowFileChooser,
+      )?
+          onShowFileChooser,
       void Function(
         android_webview.WebChromeClient instance,
         android_webview.PermissionRequest request,
-      )? onPermissionRequest,
-    })? createWebChromeClient,
+      )?
+          onPermissionRequest,
+    })?
+        createWebChromeClient,
     android_webview.WebView? mockWebView,
     android_webview.WebViewClient? mockWebViewClient,
     android_webview.WebStorage? mockWebStorage,
@@ -83,11 +86,13 @@ void main() {
                     Future<List<String>> Function(
                       android_webview.WebView webView,
                       android_webview.FileChooserParams params,
-                    )? onShowFileChooser,
+                    )?
+                        onShowFileChooser,
                     void Function(
                       android_webview.WebChromeClient instance,
                       android_webview.PermissionRequest request,
-                    )? onPermissionRequest,
+                    )?
+                        onPermissionRequest,
                   }) =>
                       MockWebChromeClient(),
               createAndroidWebView: () => nonNullMockWebView,
@@ -102,23 +107,27 @@ void main() {
                   int errorCode,
                   String description,
                   String failingUrl,
-                )? onReceivedError,
+                )?
+                        onReceivedError,
                 void Function(
                   android_webview.WebView webView,
                   android_webview.WebResourceRequest request,
                   android_webview.WebResourceError error,
-                )? onReceivedRequestError,
+                )?
+                    onReceivedRequestError,
                 void Function(
                   android_webview.WebView webView,
                   android_webview.WebResourceRequest request,
-                )? requestLoading,
+                )?
+                    requestLoading,
                 void Function(android_webview.WebView webView, String url)?
                     urlLoading,
                 void Function(
                   android_webview.WebView webView,
                   String url,
                   bool isReload,
-                )? doUpdateVisitedHistory,
+                )?
+                    doUpdateVisitedHistory,
               }) =>
                   mockWebViewClient ?? MockWebViewClient(),
               createFlutterAssetManager: () =>
@@ -577,7 +586,8 @@ void main() {
           Future<List<String>> Function(
             android_webview.WebView webView,
             android_webview.FileChooserParams params,
-          )? onShowFileChooser,
+          )?
+              onShowFileChooser,
           dynamic onPermissionRequest,
         }) {
           onShowFileChooserCallback = onShowFileChooser!;
@@ -627,7 +637,8 @@ void main() {
           void Function(
             android_webview.WebChromeClient instance,
             android_webview.PermissionRequest request,
-          )? onPermissionRequest,
+          )?
+              onPermissionRequest,
         }) {
           onPermissionRequestCallback = onPermissionRequest!;
           return mockWebChromeClient;
@@ -677,7 +688,8 @@ void main() {
           void Function(
             android_webview.WebChromeClient instance,
             android_webview.PermissionRequest request,
-          )? onPermissionRequest,
+          )?
+              onPermissionRequest,
         }) {
           onPermissionRequestCallback = onPermissionRequest!;
           return mockWebChromeClient;

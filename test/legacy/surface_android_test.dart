@@ -7,7 +7,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:webview_flutter_android/src/legacy/webview_surface_android.dart';
+import 'package:webview_flutter_android_2/src/legacy/webview_surface_android.dart';
 import 'package:webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
 
 void main() {

@@ -1,8 +1,0 @@
-**/example/build/
-**/android/.gradle
-**/.gradle
-**/.dart_tool
-**/.idea
-webview_flutter_android/.idea
-**/local.properties
-webview_flutter_android/example/android/.gradle

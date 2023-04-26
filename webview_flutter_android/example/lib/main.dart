@@ -93,7 +93,7 @@ class _WebViewExampleState extends State<WebViewExample> {
       AndroidWebViewControllerCreationParams(),
     )
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      // ..setBackgroundColor(const Color(0x80000000))
+      ..setBackgroundColor(const Color(0x80000000))
       ..setPlatformNavigationDelegate(
         PlatformNavigationDelegate(
           const PlatformNavigationDelegateCreationParams(),
@@ -145,7 +145,7 @@ Page resource error:
         },
       )
       ..loadRequest(LoadRequestParams(
-        uri: Uri.parse('https://cookie-test.rasp.piccmaq.com'),
+        uri: Uri.parse('https://flutter.dev'),
       ));
   }
 

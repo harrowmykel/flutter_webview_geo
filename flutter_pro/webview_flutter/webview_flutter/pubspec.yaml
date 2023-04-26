@@ -3,6 +3,7 @@ description: A Flutter plugin that provides a WebView widget who Support photo u
 repository: https://github.com/wenzhiming/flutter-plugins/tree/dev/packages/webview_flutter/webview_flutter
 issue_tracker: https://github.com/wenzhiming/flutter-plugins/issues
 version: 3.0.1+4
+publish_to: none
 
 environment:
   sdk: ">=2.14.0 <3.0.0"

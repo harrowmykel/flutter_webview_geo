@@ -3,6 +3,7 @@ description: A Flutter plugin that provides a WebView widget based on Apple's WK
 repository: https://github.com/flutter/packages/tree/main/packages/webview_flutter/webview_flutter_wkwebview
 issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+webview%22
 version: 3.4.0
+publish_to: none
 
 environment:
   sdk: ">=2.18.0 <4.0.0"
@@ -23,7 +24,7 @@ dependencies:
   webview_flutter_platform_interface:
     git:
       url: https://github.com/harrowmykel/flutter_webview_geo.git
-      ref: release/v1.0.7
+      ref: release/v1.0.0.pro
       path: webview_flutter_platform_interface
 
 dev_dependencies:

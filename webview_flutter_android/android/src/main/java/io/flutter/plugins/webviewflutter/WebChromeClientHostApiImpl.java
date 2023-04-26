@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
+import io.flutter.Log;
 import io.flutter.plugins.webviewflutter.GeneratedAndroidWebView.WebChromeClientHostApi;
 import java.util.Objects;
 
@@ -89,7 +90,6 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
       returnValueForOnShowFileChooser = value;
     }
     
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
       GeoLocationPermissionRequest request = new GeoLocationPermissionRequest(origin,
@@ -107,6 +107,7 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
       // use the permissionRequest instead of creating a new function
       flutterApi.onPermissionRequest(this, request, reply -> {
       });
+                  Log.d("Micheal-geoloation extened", "requested");
     }
   }
 
@@ -195,6 +196,26 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
      */
     public void setWebViewClient(@NonNull WebViewClient webViewClient) {
       this.webViewClient = webViewClient;
+    }
+    
+    @Override
+    public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+      GeoLocationPermissionRequest request = new GeoLocationPermissionRequest(origin,
+          new GeoLocationPermissionRequestInterface() {
+            @Override
+            public void onGrant(boolean allow, boolean retain) {
+              callback.invoke(origin, allow, retain);
+            }
+
+            @Override
+            public void onDeny() {
+              callback.invoke(origin, false, false);
+            }
+          });
+      // use the permissionRequest instead of creating a new function
+      flutterApi.onPermissionRequest(this, request, reply -> {
+      });
+                  Log.d("Micheal-geoloation", "secure base requested");
     }
   }
 

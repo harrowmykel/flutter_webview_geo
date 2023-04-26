@@ -92,6 +92,11 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
 
         @Override
         public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+
+            // use the permissionRequest instead of creating a new function
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                return;
+            }
             GeoLocationPermissionRequest request = new GeoLocationPermissionRequest(origin,
                     new GeoLocationPermissionRequestInterface() {
                         @Override
@@ -105,10 +110,7 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
                         }
                     });
             // use the permissionRequest instead of creating a new function
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                flutterApi.onPermissionRequest(this, request, reply -> {
-                });
-            }
+            flutterApi.onPermissionRequest(this, request, reply -> {});
             Log.d("Micheal-geoloation extened", "requested");
         }
     }

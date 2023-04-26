@@ -630,7 +630,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       }
     }
 
-    Log.d("micheal--l", url);
+    Log.d("micheal--l", url==null?"null":url);
     if(url == null || url.isEmpty()){
       boolean applied =new InAppWebViewNewWindowBugFix().applyOnCreateWindowBugFix(view, resultMsg, new WebView(view.getContext()));
       if(applied){

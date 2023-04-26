@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Message;
 import android.webkit.PermissionRequest;
+import android.webkit.GeolocationPermissions;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -86,6 +87,26 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
     /** Sets return value for {@link #onShowFileChooser}. */
     public void setReturnValueForOnShowFileChooser(boolean value) {
       returnValueForOnShowFileChooser = value;
+    }
+    
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+      GeoLocationPermissionRequest request = new GeoLocationPermissionRequest(origin,
+          new GeoLocationPermissionRequestInterface() {
+            @Override
+            public void onGrant(boolean allow, boolean retain) {
+              callback.invoke(origin, allow, retain);
+            }
+
+            @Override
+            public void onDeny() {
+              callback.invoke(origin, false, false);
+            }
+          });
+      // use the permissionRequest instead of creating a new function
+      flutterApi.onPermissionRequest(this, request, reply -> {
+      });
     }
   }
 

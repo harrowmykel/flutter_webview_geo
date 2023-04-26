@@ -23,7 +23,7 @@ dependencies:
     git:
       url: https://github.com/harrowmykel/flutter_webview_geo.git
       ref: release/v1.0.0.pro
-      path: webview_flutter_platform_interface
+      path: flutter_pro/webview_flutter/webview_flutter_platform_interface
 
 dev_dependencies:
   build_runner: ^2.1.4

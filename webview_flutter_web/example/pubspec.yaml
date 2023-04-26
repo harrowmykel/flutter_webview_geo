@@ -14,7 +14,7 @@ dependencies:
   webview_flutter_platform_interface:
     git:
       url: https://github.com/harrowmykel/flutter_webview_geo.git
-      ref: release/v1.0.5
+      ref: release/v1.0.6
       path: webview_flutter_platform_interface
   webview_flutter_web:
     # When depending on this package from a real application you should use:

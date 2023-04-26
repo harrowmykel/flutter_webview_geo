@@ -630,14 +630,13 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       }
     }
 
-    Log.d("micheal--l", url==null?"null":url);
-    if(url == null || url.isEmpty()){
-      boolean applied =new InAppWebViewNewWindowBugFix().applyOnCreateWindowBugFix(view, resultMsg, new WebView(view.getContext()));
-      if(applied){
-        return true;
-      }
+    boolean applied = new InAppWebViewNewWindowBugFix().applyOnCreateWindowBugFix(view, resultMsg, url);
+    if(applied){
+      Log.d("westlife", "r");
+      return true;
     }
 
+    Log.d("westlife", "q");
     URLRequest request = new URLRequest(url, "GET", null, null);
     CreateWindowAction createWindowAction = new CreateWindowAction(
             request,

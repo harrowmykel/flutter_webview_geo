@@ -7,6 +7,7 @@ package io.flutter.plugins.webviewflutter;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Message;
+import android.util.Log;
 import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -102,6 +103,7 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
         boolean isDialog,
         boolean isUserGesture,
         @NonNull Message resultMsg) {
+      Log.d("micheal", "a");
       return onCreateWindow(view, resultMsg, new WebView(view.getContext()));
     }
 
@@ -127,10 +129,13 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
       // calls to WebViewClient.requestLoading/WebViewClient.urlLoading when a new
       // window is opened. This is to make sure a url opened by `Window.open` has
       // a secure url.
+      Log.d("micheal", "b");
       if (webViewClient == null) {
+        Log.d("micheal", "c");
         return false;
       }
 
+      Log.d("micheal", "d");
       final WebViewClient windowWebViewClient =
           new WebViewClient() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -138,8 +143,10 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
             public boolean shouldOverrideUrlLoading(
                 @NonNull WebView windowWebView, @NonNull WebResourceRequest request) {
               if (!webViewClient.shouldOverrideUrlLoading(view, request)) {
+                Log.d("micheal", "e");
                 view.loadUrl(request.getUrl().toString());
               }
+              Log.d("micheal", "f");
               return true;
             }
 
@@ -147,7 +154,9 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
             @Override
             @SuppressWarnings({"deprecation", "RedundantSuppression"})
             public boolean shouldOverrideUrlLoading(WebView windowWebView, String url) {
+              Log.d("micheal", "g");
               if (!webViewClient.shouldOverrideUrlLoading(view, url)) {
+                Log.d("micheal", "u");
                 view.loadUrl(url);
               }
               return true;
@@ -155,14 +164,18 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
           };
 
       if (onCreateWindowWebView == null) {
+        Log.d("micheal", "h");
         onCreateWindowWebView = new WebView(view.getContext());
       }
+      Log.d("micheal", "i");
       onCreateWindowWebView.setWebViewClient(windowWebViewClient);
 
+      Log.d("micheal", "j");
       final WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
       transport.setWebView(onCreateWindowWebView);
       resultMsg.sendToTarget();
 
+      Log.d("micheal", "k");
       return true;
     }
 

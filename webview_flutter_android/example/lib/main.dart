@@ -99,16 +99,16 @@ class _WebViewExampleState extends State<WebViewExample> {
           const PlatformNavigationDelegateCreationParams(),
         )
           ..setOnProgress((int progress) {
-            debugPrint('WebView is loading (progress : $progress%)');
+            _debugPrint('WebView is loading (progress : $progress%)');
           })
           ..setOnPageStarted((String url) {
-            debugPrint('Page started loading: $url');
+            _debugPrint('Page started loading: $url');
           })
           ..setOnPageFinished((String url) {
-            debugPrint('Page finished loading: $url');
+            _debugPrint('Page finished loading: $url');
           })
           ..setOnWebResourceError((WebResourceError error) {
-            debugPrint('''
+            _debugPrint('''
 Page resource error:
   code: ${error.errorCode}
   description: ${error.description}
@@ -118,14 +118,14 @@ Page resource error:
           })
           ..setOnNavigationRequest((NavigationRequest request) {
             if (request.url.startsWith('https://www.youtube.com/')) {
-              debugPrint('blocking navigation to ${request.url}');
+              _debugPrint('blocking navigation to ${request.url}');
               return NavigationDecision.prevent;
             }
-            debugPrint('allowing navigation to ${request.url}');
+            _debugPrint('allowing navigation to ${request.url}');
             return NavigationDecision.navigate;
           })
           ..setOnUrlChange((UrlChange change) {
-            debugPrint('url change to ${change.url}');
+            _debugPrint('url change to ${change.url}');
           }),
       )
       ..addJavaScriptChannel(JavaScriptChannelParams(
@@ -138,15 +138,19 @@ Page resource error:
       ))
       ..setOnPlatformPermissionRequest(
         (PlatformWebViewPermissionRequest request) {
-          debugPrint(
+          _debugPrint(
             'requesting permissions for ${request.types.map((WebViewPermissionResourceType type) => type.name)}',
           );
           request.grant();
         },
       )
       ..loadRequest(LoadRequestParams(
-        uri: Uri.parse('https://flutter.dev'),
+        uri: Uri.parse('https://cookie-test.rasp.piccmaq.com'),
       ));
+  }
+
+  _debugPrint(String a) {
+    // debugPrint(a);
   }
 
   @override

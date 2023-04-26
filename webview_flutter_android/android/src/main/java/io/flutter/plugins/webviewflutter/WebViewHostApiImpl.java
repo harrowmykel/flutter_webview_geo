@@ -85,8 +85,6 @@ public class WebViewHostApiImpl implements WebViewHostApi {
         @NonNull InstanceManager instanceManager) {
       super(context);
       currentWebViewClient = new WebViewClient();
-      // currentWebChromeClient.
-      //currentWebViewClient.
       currentWebChromeClient = new WebChromeClientHostApiImpl.SecureWebChromeClient();
       api = new WebViewFlutterApiImpl(binaryMessenger, instanceManager);
 
@@ -206,10 +204,6 @@ public class WebViewHostApiImpl implements WebViewHostApi {
     displayListenerProxy.onPreWebViewInitialization(displayManager);
 
     final WebView webView = webViewProxy.createWebView(context, binaryMessenger, instanceManager);
-    webView.setVerticalScrollBarEnabled(false);
-    webView.setHorizontalScrollBarEnabled(false);
-    // webView.
-   // webView.
 
     displayListenerProxy.onPostWebViewInitialization(displayManager);
     instanceManager.addDartCreatedInstance(webView, instanceId);

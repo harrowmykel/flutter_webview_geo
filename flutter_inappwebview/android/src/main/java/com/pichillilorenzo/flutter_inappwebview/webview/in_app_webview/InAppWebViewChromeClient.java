@@ -47,6 +47,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFileProvider;
+import com.pichillilorenzo.flutter_inappwebview.InAppWebViewNewWindowBugFix;
 import com.pichillilorenzo.flutter_inappwebview.R;
 import com.pichillilorenzo.flutter_inappwebview.types.CreateWindowAction;
 import com.pichillilorenzo.flutter_inappwebview.in_app_browser.ActivityResultListener;
@@ -626,6 +627,14 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
         if(imageUrl != null && !imageUrl.isEmpty()) {
           url = imageUrl;
         }
+      }
+    }
+
+    Log.d("micheal--l", url);
+    if(url == null || url.isEmpty()){
+      boolean applied =new InAppWebViewNewWindowBugFix().applyOnCreateWindowBugFix(view, resultMsg, new WebView(view.getContext()));
+      if(applied){
+        return true;
       }
     }
 

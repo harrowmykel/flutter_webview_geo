@@ -74,7 +74,8 @@ import io.flutter.plugin.common.PluginRegistry;
 
 import static android.app.Activity.RESULT_OK;
 
-public class InAppWebViewChromeClient extends WebChromeClient implements PluginRegistry.ActivityResultListener, ActivityResultListener {
+public class InAppWebViewChromeClient extends WebChromeClient
+    implements PluginRegistry.ActivityResultListener, ActivityResultListener {
 
   protected static final String LOG_TAG = "IABWebChromeClient";
   private InAppBrowserDelegate inAppBrowserDelegate;
@@ -88,22 +89,22 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
   private static Uri imageOutputFileUri;
 
   protected static final FrameLayout.LayoutParams FULLSCREEN_LAYOUT_PARAMS = new FrameLayout.LayoutParams(
-          ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+      ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.CENTER);
 
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   protected static final int FULLSCREEN_SYSTEM_UI_VISIBILITY_KITKAT = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
-          View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-          View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-          View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-          View.SYSTEM_UI_FLAG_FULLSCREEN |
-          View.SYSTEM_UI_FLAG_IMMERSIVE |
-          View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+      View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+      View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+      View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+      View.SYSTEM_UI_FLAG_FULLSCREEN |
+      View.SYSTEM_UI_FLAG_IMMERSIVE |
+      View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
 
   protected static final int FULLSCREEN_SYSTEM_UI_VISIBILITY = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
-          View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-          View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-          View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-          View.SYSTEM_UI_FLAG_FULLSCREEN;
+      View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+      View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+      View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+      View.SYSTEM_UI_FLAG_FULLSCREEN;
 
   @Nullable
   private View mCustomView;
@@ -117,7 +118,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
   public InAppWebView inAppWebView;
 
   public InAppWebViewChromeClient(@NonNull final InAppWebViewFlutterPlugin plugin,
-                                  @NonNull InAppWebView inAppWebView, InAppBrowserDelegate inAppBrowserDelegate) {
+      @NonNull InAppWebView inAppWebView, InAppBrowserDelegate inAppBrowserDelegate) {
     super();
     this.plugin = plugin;
     this.inAppWebView = inAppWebView;
@@ -140,8 +141,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
       bitmapOptions.inMutable = true;
       return BitmapFactory.decodeByteArray(
-              data, 0, data.length, bitmapOptions
-      );
+          data, 0, data.length, bitmapOptions);
     }
     return Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
   }
@@ -206,7 +206,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     } else {
       decorView.setSystemUiVisibility(FULLSCREEN_SYSTEM_UI_VISIBILITY);
     }
-    activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+    activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     ((FrameLayout) decorView).addView(this.mCustomView, FULLSCREEN_LAYOUT_PARAMS);
 
     if (inAppWebView != null) {
@@ -219,7 +220,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @Override
   public boolean onJsAlert(final WebView view, String url, final String message,
-                           final JsResult result) {
+      final JsResult result) {
     if (inAppWebView != null && inAppWebView.channelDelegate != null) {
       inAppWebView.channelDelegate.onJsAlert(url, message, null, new WebViewChannelDelegate.JsAlertCallback() {
         @Override
@@ -264,7 +265,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     return false;
   }
 
-  public void createAlertDialog(String message, final JsResult result, String responseMessage, String confirmButtonTitle) {
+  public void createAlertDialog(String message, final JsResult result, String responseMessage,
+      String confirmButtonTitle) {
     String alertMessage = (responseMessage != null && !responseMessage.isEmpty()) ? responseMessage : message;
 
     DialogInterface.OnClickListener clickListener = new DialogInterface.OnClickListener() {
@@ -280,7 +282,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       return;
     }
 
-    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity, androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity,
+        androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
     alertDialogBuilder.setMessage(alertMessage);
     if (confirmButtonTitle != null && !confirmButtonTitle.isEmpty()) {
       alertDialogBuilder.setPositiveButton(confirmButtonTitle, clickListener);
@@ -302,7 +305,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @Override
   public boolean onJsConfirm(final WebView view, String url, final String message,
-                             final JsResult result) {
+      final JsResult result) {
     if (inAppWebView != null && inAppWebView.channelDelegate != null) {
       inAppWebView.channelDelegate.onJsConfirm(url, message, null, new WebViewChannelDelegate.JsConfirmCallback() {
         @Override
@@ -349,7 +352,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     return false;
   }
 
-  public void createConfirmDialog(String message, final JsResult result, String responseMessage, String confirmButtonTitle, String cancelButtonTitle) {
+  public void createConfirmDialog(String message, final JsResult result, String responseMessage,
+      String confirmButtonTitle, String cancelButtonTitle) {
     String alertMessage = (responseMessage != null && !responseMessage.isEmpty()) ? responseMessage : message;
     DialogInterface.OnClickListener confirmClickListener = new DialogInterface.OnClickListener() {
       @Override
@@ -371,7 +375,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       return;
     }
 
-    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity, androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity,
+        androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
     alertDialogBuilder.setMessage(alertMessage);
     if (confirmButtonTitle != null && !confirmButtonTitle.isEmpty()) {
       alertDialogBuilder.setPositiveButton(confirmButtonTitle, confirmClickListener);
@@ -398,50 +403,52 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @Override
   public boolean onJsPrompt(final WebView view, String url, final String message,
-                            final String defaultValue, final JsPromptResult result) {
+      final String defaultValue, final JsPromptResult result) {
     if (inAppWebView != null && inAppWebView.channelDelegate != null) {
-      inAppWebView.channelDelegate.onJsPrompt(url, message, defaultValue, null, new WebViewChannelDelegate.JsPromptCallback() {
-        @Override
-        public boolean nonNullSuccess(@NonNull JsPromptResponse response) {
-          if (response.isHandledByClient()) {
-            Integer action = response.getAction();
-            action = action != null ? action : 1;
-            switch (action) {
-              case 0:
-                result.confirm(response.getValue());
-                break;
-              case 1:
-              default:
-                result.cancel();
+      inAppWebView.channelDelegate.onJsPrompt(url, message, defaultValue, null,
+          new WebViewChannelDelegate.JsPromptCallback() {
+            @Override
+            public boolean nonNullSuccess(@NonNull JsPromptResponse response) {
+              if (response.isHandledByClient()) {
+                Integer action = response.getAction();
+                action = action != null ? action : 1;
+                switch (action) {
+                  case 0:
+                    result.confirm(response.getValue());
+                    break;
+                  case 1:
+                  default:
+                    result.cancel();
+                }
+                return false;
+              }
+              return true;
             }
-            return false;
-          }
-          return true;
-        }
 
-        @Override
-        public void defaultBehaviour(@Nullable JsPromptResponse response) {
-          String responseMessage = null;
-          String responseDefaultValue = null;
-          String value = null;
-          String confirmButtonTitle = null;
-          String cancelButtonTitle = null;
-          if (response != null) {
-            responseMessage = response.getMessage();
-            responseDefaultValue = response.getDefaultValue();
-            value = response.getValue();
-            confirmButtonTitle = response.getConfirmButtonTitle();
-            cancelButtonTitle = response.getCancelButtonTitle();
-          }
-          createPromptDialog(view, message, defaultValue, result, responseMessage, responseDefaultValue, value, cancelButtonTitle, confirmButtonTitle);
-        }
+            @Override
+            public void defaultBehaviour(@Nullable JsPromptResponse response) {
+              String responseMessage = null;
+              String responseDefaultValue = null;
+              String value = null;
+              String confirmButtonTitle = null;
+              String cancelButtonTitle = null;
+              if (response != null) {
+                responseMessage = response.getMessage();
+                responseDefaultValue = response.getDefaultValue();
+                value = response.getValue();
+                confirmButtonTitle = response.getConfirmButtonTitle();
+                cancelButtonTitle = response.getCancelButtonTitle();
+              }
+              createPromptDialog(view, message, defaultValue, result, responseMessage, responseDefaultValue, value,
+                  cancelButtonTitle, confirmButtonTitle);
+            }
 
-        @Override
-        public void error(String errorCode, @Nullable String errorMessage, @Nullable Object errorDetails) {
-          Log.e(LOG_TAG, errorCode + ", " + ((errorMessage != null) ? errorMessage : ""));
-          result.cancel();
-        }
-      });
+            @Override
+            public void error(String errorCode, @Nullable String errorMessage, @Nullable Object errorDetails) {
+              Log.e(LOG_TAG, errorCode + ", " + ((errorMessage != null) ? errorMessage : ""));
+              result.cancel();
+            }
+          });
 
       return true;
     }
@@ -449,15 +456,18 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     return false;
   }
 
-  public void createPromptDialog(WebView view, String message, String defaultValue, final JsPromptResult result, String responseMessage, String responseDefaultValue, String value, String cancelButtonTitle, String confirmButtonTitle) {
+  public void createPromptDialog(WebView view, String message, String defaultValue, final JsPromptResult result,
+      String responseMessage, String responseDefaultValue, String value, String cancelButtonTitle,
+      String confirmButtonTitle) {
     FrameLayout layout = new FrameLayout(view.getContext());
 
     final EditText input = new EditText(view.getContext());
     input.setMaxLines(1);
-    input.setText((responseDefaultValue != null && !responseDefaultValue.isEmpty()) ? responseDefaultValue : defaultValue);
+    input.setText(
+        (responseDefaultValue != null && !responseDefaultValue.isEmpty()) ? responseDefaultValue : defaultValue);
     LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.MATCH_PARENT);
+        LinearLayout.LayoutParams.MATCH_PARENT,
+        LinearLayout.LayoutParams.MATCH_PARENT);
     input.setLayoutParams(lp);
 
     layout.setPaddingRelative(45, 15, 45, 0);
@@ -487,7 +497,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       return;
     }
 
-    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity, androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity,
+        androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
     alertDialogBuilder.setMessage(alertMessage);
     if (confirmButtonTitle != null && !confirmButtonTitle.isEmpty()) {
       alertDialogBuilder.setPositiveButton(confirmButtonTitle, confirmClickListener);
@@ -515,7 +526,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @Override
   public boolean onJsBeforeUnload(final WebView view, String url, final String message,
-                           final JsResult result) {
+      final JsResult result) {
     if (inAppWebView != null && inAppWebView.channelDelegate != null) {
       inAppWebView.channelDelegate.onJsBeforeUnload(url, message, new WebViewChannelDelegate.JsBeforeUnloadCallback() {
         @Override
@@ -562,51 +573,53 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     return false;
   }
 
-  public void createBeforeUnloadDialog(String message, final JsResult result, String responseMessage, String confirmButtonTitle, String cancelButtonTitle) {
-      String alertMessage = (responseMessage != null && !responseMessage.isEmpty()) ? responseMessage : message;
-      DialogInterface.OnClickListener confirmClickListener = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-          result.confirm();
-          dialog.dismiss();
-        }
-      };
-      DialogInterface.OnClickListener cancelClickListener = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-          result.cancel();
-          dialog.dismiss();
-        }
-      };
-
-      Activity activity = getActivity();
-      if (activity == null) {
-        return;
+  public void createBeforeUnloadDialog(String message, final JsResult result, String responseMessage,
+      String confirmButtonTitle, String cancelButtonTitle) {
+    String alertMessage = (responseMessage != null && !responseMessage.isEmpty()) ? responseMessage : message;
+    DialogInterface.OnClickListener confirmClickListener = new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        result.confirm();
+        dialog.dismiss();
       }
-
-      AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity, androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
-      alertDialogBuilder.setMessage(alertMessage);
-      if (confirmButtonTitle != null && !confirmButtonTitle.isEmpty()) {
-        alertDialogBuilder.setPositiveButton(confirmButtonTitle, confirmClickListener);
-      } else {
-        alertDialogBuilder.setPositiveButton(android.R.string.ok, confirmClickListener);
+    };
+    DialogInterface.OnClickListener cancelClickListener = new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        result.cancel();
+        dialog.dismiss();
       }
-      if (cancelButtonTitle != null && !cancelButtonTitle.isEmpty()) {
-        alertDialogBuilder.setNegativeButton(cancelButtonTitle, cancelClickListener);
-      } else {
-        alertDialogBuilder.setNegativeButton(android.R.string.cancel, cancelClickListener);
+    };
+
+    Activity activity = getActivity();
+    if (activity == null) {
+      return;
+    }
+
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity,
+        androidx.appcompat.R.style.Theme_AppCompat_Dialog_Alert);
+    alertDialogBuilder.setMessage(alertMessage);
+    if (confirmButtonTitle != null && !confirmButtonTitle.isEmpty()) {
+      alertDialogBuilder.setPositiveButton(confirmButtonTitle, confirmClickListener);
+    } else {
+      alertDialogBuilder.setPositiveButton(android.R.string.ok, confirmClickListener);
+    }
+    if (cancelButtonTitle != null && !cancelButtonTitle.isEmpty()) {
+      alertDialogBuilder.setNegativeButton(cancelButtonTitle, cancelClickListener);
+    } else {
+      alertDialogBuilder.setNegativeButton(android.R.string.cancel, cancelClickListener);
+    }
+
+    alertDialogBuilder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+      @Override
+      public void onCancel(DialogInterface dialog) {
+        result.cancel();
+        dialog.dismiss();
       }
+    });
 
-      alertDialogBuilder.setOnCancelListener(new DialogInterface.OnCancelListener() {
-        @Override
-        public void onCancel(DialogInterface dialog) {
-          result.cancel();
-          dialog.dismiss();
-        }
-      });
-
-      AlertDialog alertDialog = alertDialogBuilder.create();
-      alertDialog.show();
+    AlertDialog alertDialog = alertDialogBuilder.create();
+    alertDialog.show();
   }
 
   @Override
@@ -617,21 +630,22 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     WebView.HitTestResult result = view.getHitTestResult();
     String url = result.getExtra();
 
-    // Ensure that images with hyperlink return the correct URL, not the image source
-    if(result.getType() == WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE) {
+    // Ensure that images with hyperlink return the correct URL, not the image
+    // source
+    if (result.getType() == WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE) {
       Message href = view.getHandler().obtainMessage();
       view.requestFocusNodeHref(href);
       Bundle data = href.getData();
       if (data != null) {
         String imageUrl = data.getString("url");
-        if(imageUrl != null && !imageUrl.isEmpty()) {
+        if (imageUrl != null && !imageUrl.isEmpty()) {
           url = imageUrl;
         }
       }
     }
 
-    boolean applied = new InAppWebViewNewWindowBugFix().applyOnCreateWindowBugFix(view, resultMsg, url);
-    if(applied){
+    boolean applied = new InAppWebViewNewWindowBugFix().applyOnCreateWindowBugFix((InAppWebView) view, resultMsg, url);
+    if (applied) {
       Log.d("westlife", "r");
       return true;
     }
@@ -639,34 +653,34 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     Log.d("westlife", "q");
     URLRequest request = new URLRequest(url, "GET", null, null);
     CreateWindowAction createWindowAction = new CreateWindowAction(
-            request,
-            true,
-            isUserGesture,
-            false,
-            windowId,
-            isDialog
-    );
+        request,
+        true,
+        isUserGesture,
+        false,
+        windowId,
+        isDialog);
 
     windowWebViewMessages.put(windowId, resultMsg);
 
     if (inAppWebView != null && inAppWebView.channelDelegate != null) {
-      inAppWebView.channelDelegate.onCreateWindow(createWindowAction, new WebViewChannelDelegate.CreateWindowCallback() {
-        @Override
-        public boolean nonNullSuccess(@NonNull Boolean handledByClient) {
-          return !handledByClient;
-        }
+      inAppWebView.channelDelegate.onCreateWindow(createWindowAction,
+          new WebViewChannelDelegate.CreateWindowCallback() {
+            @Override
+            public boolean nonNullSuccess(@NonNull Boolean handledByClient) {
+              return !handledByClient;
+            }
 
-        @Override
-        public void defaultBehaviour(@Nullable Boolean handledByClient) {
-          InAppWebViewChromeClient.windowWebViewMessages.remove(windowId);
-        }
+            @Override
+            public void defaultBehaviour(@Nullable Boolean handledByClient) {
+              InAppWebViewChromeClient.windowWebViewMessages.remove(windowId);
+            }
 
-        @Override
-        public void error(String errorCode, @Nullable String errorMessage, @Nullable Object errorDetails) {
-          Log.e(LOG_TAG, errorCode + ", " + ((errorMessage != null) ? errorMessage : ""));
-          defaultBehaviour(null);
-        }
-      });
+            @Override
+            public void error(String errorCode, @Nullable String errorMessage, @Nullable Object errorDetails) {
+              Log.e(LOG_TAG, errorCode + ", " + ((errorMessage != null) ? errorMessage : ""));
+              defaultBehaviour(null);
+            }
+          });
 
       return true;
     }
@@ -722,8 +736,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
   public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
     if (inAppWebView != null && inAppWebView.channelDelegate != null) {
       inAppWebView.channelDelegate.onConsoleMessage(
-              consoleMessage.message(),
-              consoleMessage.messageLevel().ordinal());
+          consoleMessage.message(),
+          consoleMessage.messageLevel().ordinal());
     }
     return true;
   }
@@ -735,7 +749,6 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     if (inAppBrowserDelegate != null) {
       inAppBrowserDelegate.didChangeProgress(progress);
     }
-
 
     InAppWebView webView = (InAppWebView) view;
 
@@ -790,8 +803,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @Override
   public void onReceivedTouchIconUrl(WebView view,
-                                      String url,
-                                      boolean precomposed) {
+      String url,
+      boolean precomposed) {
     super.onReceivedTouchIconUrl(view, url, precomposed);
 
     InAppWebView webView = (InAppWebView) view;
@@ -823,7 +836,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @TargetApi(Build.VERSION_CODES.LOLLIPOP)
   @Override
-  public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
+  public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback,
+      FileChooserParams fileChooserParams) {
     String[] acceptTypes = fileChooserParams.getAcceptTypes();
     boolean allowMultiple = fileChooserParams.getMode() == WebChromeClient.FileChooserParams.MODE_OPEN_MULTIPLE;
     boolean captureEnabled = fileChooserParams.isCaptureEnabled();
@@ -832,12 +846,14 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @Override
   public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-    if (InAppWebViewFlutterPlugin.filePathCallback == null && InAppWebViewFlutterPlugin.filePathCallbackLegacy == null) {
+    if (InAppWebViewFlutterPlugin.filePathCallback == null
+        && InAppWebViewFlutterPlugin.filePathCallbackLegacy == null) {
       return true;
     }
 
     // based off of which button was pressed, we get an activity result and a file
-    // the camera activity doesn't properly return the filename* (I think?) so we use
+    // the camera activity doesn't properly return the filename* (I think?) so we
+    // use
     // this filename instead
     switch (requestCode) {
       case PICKER:
@@ -892,7 +908,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     // we have a captured image or video file
     Uri mediaUri = getCapturedMediaFile();
     if (mediaUri != null) {
-      return new Uri[]{mediaUri};
+      return new Uri[] { mediaUri };
     }
 
     return null;
@@ -940,8 +956,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       if (!needsCameraPermission()) {
         if (images) {
           pickerIntent = getPhotoIntent();
-        }
-        else if (video) {
+        } else if (video) {
           pickerIntent = getVideoIntent();
         }
       }
@@ -959,7 +974,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
           extraIntents.add(getVideoIntent());
         }
       }
-      pickerIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, extraIntents.toArray(new Parcelable[]{}));
+      pickerIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, extraIntents.toArray(new Parcelable[] {}));
     }
 
     Activity activity = getActivity();
@@ -972,7 +987,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   public boolean startPickerIntent(final ValueCallback<Uri[]> callback, final String[] acceptTypes,
-                                   final boolean allowMultiple, final boolean captureEnabled) {
+      final boolean allowMultiple, final boolean captureEnabled) {
     InAppWebViewFlutterPlugin.filePathCallback = callback;
 
     boolean images = acceptsImages(acceptTypes);
@@ -984,8 +999,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
       if (!needsCameraPermission()) {
         if (images) {
           pickerIntent = getPhotoIntent();
-        }
-        else if (video) {
+        } else if (video) {
           pickerIntent = getVideoIntent();
         }
       }
@@ -1005,7 +1019,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
       pickerIntent = new Intent(Intent.ACTION_CHOOSER);
       pickerIntent.putExtra(Intent.EXTRA_INTENT, fileSelectionIntent);
-      pickerIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, extraIntents.toArray(new Parcelable[]{}));
+      pickerIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, extraIntents.toArray(new Parcelable[] {}));
     }
 
     Activity activity = getActivity();
@@ -1027,9 +1041,11 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     }
     PackageManager packageManager = activity.getPackageManager();
     try {
-      String[] requestedPermissions = packageManager.getPackageInfo(activity.getApplicationContext().getPackageName(), PackageManager.GET_PERMISSIONS).requestedPermissions;
+      String[] requestedPermissions = packageManager.getPackageInfo(activity.getApplicationContext().getPackageName(),
+          PackageManager.GET_PERMISSIONS).requestedPermissions;
       if (Arrays.asList(requestedPermissions).contains(Manifest.permission.CAMERA)
-              && ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+          && ContextCompat.checkSelfPermission(activity,
+              Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
         needed = true;
       }
     } catch (PackageManager.NameNotFoundException e) {
@@ -1128,7 +1144,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   private String[] getAcceptedMimeType(String[] types) {
     if (isArrayEmpty(types)) {
-      return new String[]{DEFAULT_MIME_TYPES};
+      return new String[] { DEFAULT_MIME_TYPES };
     }
     String[] mimeTypes = new String[types.length];
     for (int i = 0; i < types.length; i++) {
@@ -1173,10 +1189,10 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
     }
     // for versions 6.0+ (23) we use the FileProvider to avoid runtime permissions
     String fileProviderAuthority = activity.getApplicationContext().getPackageName() + "." +
-            InAppWebViewFileProvider.fileProviderAuthorityExtension;
+        InAppWebViewFileProvider.fileProviderAuthorityExtension;
     return FileProvider.getUriForFile(activity.getApplicationContext(),
-            fileProviderAuthority,
-            capturedFile);
+        fileProviderAuthority,
+        capturedFile);
   }
 
   @Nullable
@@ -1213,7 +1229,8 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
   }
 
   private Boolean isArrayEmpty(String[] arr) {
-    // when our array returned from getAcceptTypes() has no values set from the webview
+    // when our array returned from getAcceptTypes() has no values set from the
+    // webview
     // i.e. <input type="file" />, without any "accept" attr
     // will be an array with one empty string element, afaik
     return arr.length == 0 || (arr.length == 1 && arr[0].length() == 0);
@@ -1253,10 +1270,10 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
           defaultBehaviour(null);
         }
       };
-      
-      if(inAppWebView != null && inAppWebView.channelDelegate != null) {
+
+      if (inAppWebView != null && inAppWebView.channelDelegate != null) {
         inAppWebView.channelDelegate.onPermissionRequest(request.getOrigin().toString(),
-                Arrays.asList(request.getResources()), null, callback);
+            Arrays.asList(request.getResources()), null, callback);
       } else {
         callback.defaultBehaviour(null);
       }
@@ -1265,17 +1282,17 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   @Override
   public void onRequestFocus(WebView view) {
-    if(inAppWebView != null && inAppWebView.channelDelegate != null) {
+    if (inAppWebView != null && inAppWebView.channelDelegate != null) {
       inAppWebView.channelDelegate.onRequestFocus();
     }
   }
 
   @Override
   public void onPermissionRequestCanceled(PermissionRequest request) {
-    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
-            inAppWebView != null && inAppWebView.channelDelegate != null) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &&
+        inAppWebView != null && inAppWebView.channelDelegate != null) {
       inAppWebView.channelDelegate.onPermissionRequestCanceled(request.getOrigin().toString(),
-                Arrays.asList(request.getResources()));
+          Arrays.asList(request.getResources()));
     }
   }
 

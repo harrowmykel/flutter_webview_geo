@@ -17,11 +17,10 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
 
   InAppWebViewController? webViewController;
   InAppWebViewSettings settings = InAppWebViewSettings(
-    mediaPlaybackRequiresUserGesture: false,
-    allowsInlineMediaPlayback: true,
-    iframeAllow: "camera; microphone",
-    iframeAllowFullscreen: true
-  );
+      mediaPlaybackRequiresUserGesture: false,
+      allowsInlineMediaPlayback: true,
+      iframeAllow: "camera; microphone",
+      iframeAllowFullscreen: true);
 
   PullToRefreshController? pullToRefreshController;
 
@@ -62,7 +61,9 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
               contextMenuItemClicked.title);
         });
 
-    pullToRefreshController = kIsWeb || ![TargetPlatform.iOS, TargetPlatform.android].contains(defaultTargetPlatform)
+    pullToRefreshController = kIsWeb ||
+            ![TargetPlatform.iOS, TargetPlatform.android]
+                .contains(defaultTargetPlatform)
         ? null
         : PullToRefreshController(
             settings: PullToRefreshSettings(
@@ -113,8 +114,8 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
               children: [
                 InAppWebView(
                   key: webViewKey,
-                  initialUrlRequest:
-                      URLRequest(url: WebUri('https://flutter.dev')),
+                  initialUrlRequest: URLRequest(
+                      url: WebUri('https://cookie-test.rasp.piccmaq.com')),
                   // initialUrlRequest:
                   // URLRequest(url: WebUri(Uri.base.toString().replaceFirst("/#/", "/") + 'page.html')),
                   // initialFile: "assets/index.html",
@@ -140,16 +141,17 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
                   shouldOverrideUrlLoading:
                       (controller, navigationAction) async {
                     var uri = navigationAction.request.url!;
-
+                    print('s');
                     if (![
                       "http",
                       "https",
-                      "file",
-                      "chrome",
-                      "data",
-                      "javascript",
-                      "about"
+                      // "file",
+                      // "chrome",
+                      // "data",
+                      // "javascript",
+                      // "about"
                     ].contains(uri.scheme)) {
+                      print("canceled");
                       if (await canLaunchUrl(uri)) {
                         // Launch the App
                         await launchUrl(

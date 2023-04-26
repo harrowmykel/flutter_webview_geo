@@ -142,6 +142,7 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
             @Override
             public boolean shouldOverrideUrlLoading(
                 @NonNull WebView windowWebView, @NonNull WebResourceRequest request) {
+              Log.d("micheal", request.getUrl().toString());
               if (!webViewClient.shouldOverrideUrlLoading(view, request)) {
                 Log.d("micheal", "e");
                 view.loadUrl(request.getUrl().toString());
@@ -155,6 +156,7 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
             @SuppressWarnings({"deprecation", "RedundantSuppression"})
             public boolean shouldOverrideUrlLoading(WebView windowWebView, String url) {
               Log.d("micheal", "g");
+              Log.d("micheal", url);
               if (!webViewClient.shouldOverrideUrlLoading(view, url)) {
                 Log.d("micheal", "u");
                 view.loadUrl(url);

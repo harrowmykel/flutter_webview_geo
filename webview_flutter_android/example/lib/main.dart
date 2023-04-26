@@ -119,8 +119,10 @@ Page resource error:
           ..setOnNavigationRequest((NavigationRequest request) {
             if (request.url.startsWith('https://www.youtube.com/')) {
               _debugPrint('blocking navigation to ${request.url}');
+              print('prevent');
               return NavigationDecision.prevent;
             }
+            print('allow');
             _debugPrint('allowing navigation to ${request.url}');
             return NavigationDecision.navigate;
           })
